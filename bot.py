@@ -8,7 +8,7 @@ class bot:
 
     def __init__(self):
         self.candidates = loaddata.load_data()
-        with open("precompute.json", "r") as f:
+        with open("entropy.json", "r") as f:
             score = json.load(f)
         with open("output.json", "w") as f:
             json.dump(score, f, indent=4)

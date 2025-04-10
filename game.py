@@ -14,7 +14,7 @@ class game:
         else:
             file = open("answers/" + str(length) + "letters.txt", "r")
             words = file.read().splitlines()
-            n = random.randint(0, len(words) - 1)
+            n = random.randint(0, len(words) - 1) if index == -1 else index
             self.answer = words[n]
 
     def show_answer(self):
@@ -26,6 +26,7 @@ class game:
         if len(guess) != len(self.answer):
             print("Invalid guess length")
             return
+            
         result = get_prediction(guess, self.answer)
         self.guesses.append(guess)
         self.results.append(result)
